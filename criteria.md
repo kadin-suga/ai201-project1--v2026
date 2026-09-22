@@ -26,6 +26,75 @@ contains the answer.
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
 
+Question 1:
+python app.py ask "What issues exist for the Innisfree hall"
+  (best distance 0.363, cutoff 0.6)
+
+Based on the provided documents, the issues for Innisfree Hall are:
+* There is no air conditioning, which matters for the first three weeks of September (housing_innisfree_hall.txt).
+* The building has moderate noise levels, and the wrong ratio of washers to dryers causes dryers to back up on Sunday evenings, leading to waits if you do laundry after 6pm on Sundays (housing_innisfree_hall.txt, housing_innisfree_hall_noise.txt, and housing_innisfree_hall_laundry.txt).
+
+Sources retrieved: dining_halden_hall.txt, dining_pellew_dining_hall.txt, housing_innisfree_hall.txt, housing_innisfree_hall_laundry.txt, housing_innisfree_hall_noise.txt
+
+1 model calls this session, 809 tokens (690 in, 119 out)
+
+Contains: Yes
+
+
+Question 2:
+python app.py ask "What issues exist for the Morrow house" 
+  (best distance 0.362, cutoff 0.6)
+
+The issues for Morrow House include a known damp problem on the ground floor (which caused two rooms to be taken offline in 2024), laundry dryers backing up on Sunday evenings due to a poor ratio of washers to dryers, and noise levels that are loud until about 1am on weekends with no enforced quiet hours. 
+
+Sources: `housing_morrow_house.txt`, `housing_morrow_house_laundry.txt`, and `housing_morrow_house_noise.txt`.
+
+Sources retrieved: course_hist_118_workload.txt, housing_morrow_house.txt, housing_morrow_house_laundry.txt, housing_morrow_house_noise.txt, study_library_hours.txt
+
+Contains: Yes
+
+Question 3:
+python app.py ask "Which housing is the best to stay at"                    
+  (best distance 0.449, cutoff 0.6)
+
+Based on the provided documents, there is no single housing option stated as "the best." Instead, each document highlights different positive and negative aspects of various buildings, such as:
+
+* **Tamsin Court** offers the most independent housing and a full kitchen, but is the most expensive and isolating. (*housing_tamsin_court.txt*)
+* **Aldridge Hall** is the closest building to the science quad, but its elevator goes out roughly one week per semester. (*housing_aldridge_hall.txt*)
+* **Innisfree Hall** features a shared-bathroom-between-two-rooms arrangement considered the best compromise on campus, but lacks air conditioning. (*housing_innisfree_hall.txt*)
+* **Morrow House** is the cheapest housing tier, but has a known damp problem on the ground floor. (*housing_morrow_house.txt*)
+* **Old Brewhouse** is the most characterful building, but has uneven heating and old laundry machines. (*housing_old_brewhouse.txt*)
+
+Sources retrieved: housing_aldridge_hall.txt, housing_innisfree_hall.txt, housing_morrow_house.txt, housing_old_brewhouse.txt, housing_tamsin_court.txt
+
+Contains: Yes
+
+Question 4:
+python app.py ask "Who draws from the random lottery system for housing"
+  (best distance 0.293, cutoff 0.6)
+
+Rising sophomores get a number drawn at random for the housing lottery. 
+
+Source: `admin_housing_lottery.txt`
+
+Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_morrow_house.txt, housing_tamsin_court.txt
+
+Contains: Yes
+
+Question 5:
+python app.py ask "How are sophomores and junior housing separated"
+  (best distance 0.454, cutoff 0.6)
+
+
+
+Based on the documents, rising sophomores get a number drawn at random in the housing lottery, whereas juniors and seniors are ordered first by accumulated credit hours, with tie-breaks done randomly. 
+
+Source: admin_housing_lottery.txt
+
+Sources retrieved: admin_housing_lottery.txt, housing_aldridge_hall.txt, housing_innisfree_hall.txt, housing_old_brewhouse.txt, housing_tamsin_court.txt
+
+Contains: Yes
+
 ---
 
 ## 2. Every answer names a source
