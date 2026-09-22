@@ -59,6 +59,7 @@ in at least 4 of 5 tries.
 **Why this target:**
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+All 5 of the out_of_scope questions showed a that the best distances was above the cutoff. This showed me that there was no LLM call. I chose 4 out of the 5 teests to be unrelated with information so that the gate can be tested on relevant information. And the final question is for testing possibly relevant information where I could gain clarity on faulty token chunking.
 
 ---
 
