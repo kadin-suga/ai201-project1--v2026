@@ -97,7 +97,7 @@ The best way to determine whether the chunk sizes are optimal is to test the RAG
 
 
 **Why this target:**
-I want to ensure that the answers provided by the RAG pipeline are accurate. To test this, I plan to feed the RAG pipeline a variety of questions along with their corresponding specific answers. 
+I want to ensure that the answers provided by the RAG pipeline are accurate. To test this, I plan to feed the RAG pipeline a variety of questions along with their corresponding specific answers. Then run the same set questions 10 times on the pipeline to see the accuracy of the model.
 
 
 

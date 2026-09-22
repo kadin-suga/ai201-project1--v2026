@@ -42,7 +42,7 @@ OUT_OF_SCOPE = [
     "How do I change the oil in a diesel engine?",
     "Who won the 1994 World Cup?",
     "What is the recommended dosage of ibuprofen for a headache?",
-    "How do I write a fix my bed?",
+    "How do I fix my bed?",
 ]
 
 
