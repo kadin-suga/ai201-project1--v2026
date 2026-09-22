@@ -80,7 +80,7 @@ All 5 of the out_of_scope questions showed a that the best distances was above t
 
 
 **Why this target:**
-
+The best way to determine whether the chunk sizes are optimal is to test the RAG pipeline on the chunked information. For instance, if the chunks are too small, relevant information may be difficult to locate and could be omitted from the final answer. Conversely, if the chunk size is too large, the pipeline may retrieve excessive information from the document, resulting in longer processing times. Therefore, I have found that the most effective approach to establishing the ideal chunk size is to assess your document sizes and explore how much you can chunk while still capturing relevant information per index.
 
 
 ---
@@ -96,8 +96,9 @@ All 5 of the out_of_scope questions showed a that the best distances was above t
      outcome. -->
 
 
-
 **Why this target:**
+I want to ensure that the answers provided by the RAG pipeline are accurate. To test this, I plan to feed the RAG pipeline a variety of questions along with their corresponding specific answers. 
+
 
 
 
