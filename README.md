@@ -165,8 +165,10 @@ Sources retrieved: dining_halden_hall.txt, dining_kestrel_commons.txt, dining_no
      Milestone 5. -->
 
 **1.**
+I asked AI to clarify the meaning on chunking.
 
 **2.**
+I used codex to understand the terminal commands for indexing and obtaining samples of the chunks.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
