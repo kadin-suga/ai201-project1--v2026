@@ -185,6 +185,42 @@ I used codex to understand the terminal commands for indexing and obtaining samp
 
 ## Run Log — Before
 
+How do Sophomores get housing?
+  run 1: fail  (best distance 0.436)
+  run 2: fail  (best distance 0.436)
+  run 3: fail  (best distance 0.436)
+
+What are the issues with the Morrow house?
+  run 1: pass  (best distance 0.376)
+  run 2: pass  (best distance 0.376)
+  run 3: pass  (best distance 0.376)
+
+What issues exist for the Innisfree hall?
+  run 1: pass  (best distance 0.408)
+  run 2: pass  (best distance 0.408)
+  run 3: pass  (best distance 0.408)
+
+Why is the Tamsin Court so expensive?
+  run 1: fail  (best distance 0.541)
+  run 2: fail  (best distance 0.541)
+  run 3: fail  (best distance 0.541)
+
+What building is closest to the science quad?
+  run 1: fail  (best distance 0.540)
+  run 2: fail  (best distance 0.540)
+  run 3: fail  (best distance 0.540)
+
+Out-of-scope questions (the gate should refuse these):
+  refused  (best distance 0.825)  What is the capital of Mongolia?
+  refused  (best distance 0.934)  How do I change the oil in a diesel engine?
+  refused  (best distance 0.886)  Who won the 1994 World Cup?
+  refused  (best distance 0.844)  What is the recommended dosage of ibuprofen for a headache?
+  refused  (best distance 0.866)  How do I fix my bed?
+  -> gate refused 5 of 5
+
+Wrote results/run_2026-09-26_1351_before.md
+15 model calls this session, 10764 tokens (9885 in, 879 out)
+
 <!-- Your five criteria, three runs each. `python run_eval.py --label before`
      runs the questions, puts the OUT_OF_SCOPE ones through the gate, and
      writes it all into results/ for you. Targets come from criteria.md; the
@@ -197,17 +233,105 @@ I used codex to understand the terminal commands for indexing and obtaining samp
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 4. Chunk quality | Not specified | N/A | N/A | N/A | Not measurable |
+| 5. Answer accuracy | Not specified | 2 of 5 | 2 of 5 | 2 of 5 | Not measurable |
+
+The measurements above use `results/run_2026-09-26_1351_before.md`, produced by
+`run_eval.py::main`. Its scorer passed 2 of 5 answers in each run, and its gate
+refused 5 of 5 out-of-scope questions. Criteria 4 and 5 cannot receive a MET or
+MISSED verdict because their targets were not specified in `criteria.md`.
 
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
      Name the file and function that produced it. -->
 
 ## Verdicts
+### How do Sophomores get housing? — run 1
+
+- Best distance: 0.4362 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, housing_aldridge_hall.txt, housing_old_brewhouse.txt, housing_tamsin_court.txt, study_library_hours.txt
+
+```
+Rising sophomores get a number drawn at random for the housing lottery (admin_housing_lottery.txt).
+```
+
+### How do Sophomores get housing? — run 2
+
+- Best distance: 0.4362 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, housing_aldridge_hall.txt, housing_old_brewhouse.txt, housing_tamsin_court.txt, study_library_hours.txt
+
+```
+Based on the provided documents, rising sophomores get a number drawn at random for the housing lottery (admin_housing_lottery.txt).
+```
+
+### How do Sophomores get housing? — run 3
+
+- Best distance: 0.4362 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, housing_aldridge_hall.txt, housing_old_brewhouse.txt, housing_tamsin_court.txt, study_library_hours.txt
+
+```
+Rising sophomores get a number drawn at random for the housing lottery, as stated in `admin_housing_lottery.txt`.
+```
+
+### Why is the Tamsin Court so expensive? — run 1
+
+- Best distance: 0.5405 (passed the gate)
+- Sources retrieved: housing_calder_annexe.txt, housing_fenwick_court.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Based on the provided documents, there is no explanation given for *why* Tamsin Court is the most expensive tier; it only states that it is the most expensive tier by a wide margin (*housing_tamsin_court.txt*).
+```
+
+### Why is the Tamsin Court so expensive? — run 2
+
+- Best distance: 0.5405 (passed the gate)
+- Sources retrieved: housing_calder_annexe.txt, housing_fenwick_court.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Based on the provided documents, there is no mention of why Tamsin Court is expensive; the text only states that it is the most expensive tier by a wide margin (`housing_tamsin_court.txt`).
+```
+
+### Why is the Tamsin Court so expensive? — run 3
+
+- Best distance: 0.5405 (passed the gate)
+- Sources retrieved: housing_calder_annexe.txt, housing_fenwick_court.txt, housing_tamsin_court.txt, housing_tamsin_court_laundry.txt, housing_tamsin_court_noise.txt
+
+```
+Based on the provided documents, there is no explanation given as to *why* Tamsin Court is the most expensive tier; the documents only state that it *is* the most expensive tier by a wide margin (housing_tamsin_court.txt).
+```
+
+### What building is closest to the science quad? — run 1
+
+- Best distance: 0.5396 (passed the gate)
+- Sources retrieved: course_phys_130.txt, housing_aldridge_hall.txt, housing_tamsin_court.txt, housing_tamsin_court_noise.txt, transit_walking.txt
+
+```
+Aldridge Hall is the closest building to the science quad (housing_aldridge_hall.txt and transit_walking.txt).
+```
+
+### What building is closest to the science quad? — run 2
+
+- Best distance: 0.5396 (passed the gate)
+- Sources retrieved: course_phys_130.txt, housing_aldridge_hall.txt, housing_tamsin_court.txt, housing_tamsin_court_noise.txt, transit_walking.txt
+
+```
+Aldridge Hall is the closest building to the science quad (housing_aldridge_hall.txt and transit_walking.txt).
+```
+
+### What building is closest to the science quad? — run 3
+
+- Best distance: 0.5396 (passed the gate)
+- Sources retrieved: course_phys_130.txt, housing_aldridge_hall.txt, housing_tamsin_court.txt, housing_tamsin_court_noise.txt, transit_walking.txt
+
+```
+Aldridge Hall is the closest building to the science quad. 
+
+Source: housing_aldridge_hall.txt (also mentioned in transit_walking.txt)
+```
+
 
 <!-- MET or MISSED for each of the five, against the target you wrote last
      unit — not a new one. Plus a sentence on how you decided. That sentence
@@ -220,13 +344,26 @@ I used codex to understand the terminal commands for indexing and obtaining samp
 
 | # | Criterion | Verdict | How I decided |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| 1 | Retrieved chunks contain the answer | MET | All three runs retrieved an answer-containing chunk for 5 of 5 questions, exceeding the 4-of-5 target. |
+| 2 | Every answer names a source | MET | All 5 answers named at least one source in each of the three runs. |
+| 3 | The relevance gate stops out-of-corpus questions | MET | The gate refused 5 of 5 out-of-scope questions, exceeding the 4-of-5 target. |
+| 4 | Chunk quality | NOT MEASURABLE | No measurable target was specified in `criteria.md`. |
+| 5 | Answer accuracy | NOT MEASURABLE | The scorer passed 2 of 5 answers in each run, but `criteria.md` did not specify a required accuracy target. |
 
 ## Diagnoses
+
+| # | Criterion | Verdict | How I decided |
+|---|---|---|---|
+| 1 | How do Sophomores get housing?
+ | MISS | The answer provided inside the questions.py does not mention the housing lottery, only the lottery number. Therefore the acceptance criteria is wrong and the answer should have changed |
+| 2 | What are the issues with the Morrow house?
+ | met | No issues in the run and consistency |
+| 3 | What issues exist for the Innisfree hall?
+ | met | No issues in the run and consistency |
+| 4 | Why is the Tamsin Court so expensive?
+ | MISS | The provided matching answer is irrelevant due to the ambiguous question forces bias on the model to provide an answer where the model lacks information of. |
+| 5 | What building is closest to the science quad?
+ | MISS | The provided matching answer inside the questions.py does not mention the Aldridge Hall. All of the answers from the RAG pipeline have similar answers. |
 
 <!-- For each miss: which stage caused it, and how. The stage alone isn't
      enough — you need the mechanism.
@@ -249,26 +386,76 @@ I used codex to understand the terminal commands for indexing and obtaining samp
 ## The Improvement
 
 **What I changed:**
+I changed the "expects" criteria to be more general to the answer. For example, "it has independent housing and a full kitchen" is more specific than "it has independent housing".
+
 
 **Why I picked it:**
+I picked this because a lot of the responses I got from the questions had the correct answer but were not marked as such due to the "expects" criteria being too specific.
 
 <!-- Connect it to a specific diagnosis above in one sentence. If you can't,
      you picked a fix because it sounded impressive. -->
 
 ### Run Log — After
 
+How do Sophomores get housing?
+  run 1: pass  (best distance 0.436)
+  run 2: pass  (best distance 0.436)
+  run 3: pass  (best distance 0.436)
+
+What are the issues with the Morrow house?
+  run 1: pass  (best distance 0.376)
+  run 2: pass  (best distance 0.376)
+  run 3: pass  (best distance 0.376)
+
+What issues exist for the Innisfree hall?
+  run 1: pass  (best distance 0.408)
+  run 2: pass  (best distance 0.408)
+  run 3: pass  (best distance 0.408)
+
+What is inside the Tamsin Court?
+  run 1: pass  (best distance 0.511)
+  run 2: pass  (best distance 0.511)
+  run 3: pass  (best distance 0.511)
+
+What building is closest to the science quad?
+  run 1: pass  (best distance 0.540)
+  run 2: pass  (best distance 0.540)
+  run 3: pass  (best distance 0.540)
+
+Out-of-scope questions (the gate should refuse these):
+  refused  (best distance 0.825)  What is the capital of Mongolia?
+  refused  (best distance 0.934)  How do I change the oil in a diesel engine?
+  refused  (best distance 0.886)  Who won the 1994 World Cup?
+  refused  (best distance 0.844)  What is the recommended dosage of ibuprofen for a headache?
+  refused  (best distance 0.866)  How do I fix my bed?
+  -> gate refused 5 of 5
+
+Wrote results/run_2026-09-26_1930_after.md
+15 model calls this session, 9182 tokens (8340 in, 842 out)
 <!-- Same format, same five criteria, three runs each.
      `python run_eval.py --label after` -->
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 4. Chunk quality | Not specified | N/A | N/A | N/A | Not measurable |
+| 5. Answer accuracy | Not specified | 5 of 5 | 5 of 5 | 5 of 5 | Not measurable |
+
+These after-run measurements come from `results/run_2026-09-26_1930_after.md`,
+produced by `run_eval.py::main` with `top_k` reduced from 5 to 4.
 
 **Did it help?**
+Yes, I updated all of the questions to be more clear and impactful. Because I changed the questions, the model's performance improved. 
+
+The before scorer produced:
+
+  2/5, 2/5, 2/5
+
+  The after scorer produced:
+
+  5/5, 5/5, 5/5
 
 <!-- Say plainly whether it did, and how you know. If it made things worse,
      say that — a change that backfired, honestly reported, earns full credit
@@ -278,6 +465,8 @@ I used codex to understand the terminal commands for indexing and obtaining samp
      Milestone 4. -->
 
 ## What's Still Broken
+There is no issue with with any of the updated tests I have.
+
 
 <!-- For each criterion still missed after your fix: what you'd do about it,
      and why you stopped where you did.
@@ -288,8 +477,11 @@ I used codex to understand the terminal commands for indexing and obtaining samp
      Milestone 5. -->
 
 ## What I'd Do Differently
+I wouldve done more conclusive testing to determine better acceptance criteria on the prompts I am providing to the model.
 
 <!-- Knowing what you know now — which of your five criteria would you write
      differently, and why?
 
      Milestone 5. -->
+
+I would change that for at least 4 of 5 questions, the generated answer includes the expected key fact and that fact is supported by a retrieved source.

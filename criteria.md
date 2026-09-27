@@ -117,7 +117,7 @@ I want to ensure that the answers provided by the RAG pipeline are accurate. To 
          one that contains the answer.
 
          **Why this target:** ...
-
+         
          > **Revised in unit 2:** For at least 4 of 5 questions, the top three
          > results contain the answer.
          >
@@ -139,3 +139,5 @@ I want to ensure that the answers provided by the RAG pipeline are accurate. To 
      The whole reason the originals stay visible is so someone can see what you
      said before you knew the answer.
      ───────────────────────────────────────────────────────────────────────── -->
+
+There is no change in the criteria.
